@@ -1,0 +1,28 @@
+# This file specifies files that are *not* uploaded to Google Cloud Platform
+# using gcloud.
+
+.gcloudignore
+.git
+.gitignore
+
+# Python pycache:
+__pycache__/
+*.pyc
+
+# Local development files:
+server.log
+run.py
+.env
+.venv
+env/
+venv/
+
+# IDE files:
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files:
+.DS_Store
+Thumbs.db
