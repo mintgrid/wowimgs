@@ -15,14 +15,13 @@
 <body>
     <!-- Top Banner Ad -->
     <div class="ad-container ad-top">
-        <div class="ad-placeholder">
-            <p>Google AdSense Banner Ad (728x90)</p>
-            <!-- AdSense Banner Code -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
-                 data-ad-client="ca-pub-5037582635615029"
-                 data-ad-slot="XXXXXXXXXX"></ins>
-        </div>
+        <!-- Headeradd -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5037582635615029"
+             data-ad-slot="1500372510"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
     </div>
 
     <nav class="navbar">
@@ -39,21 +38,44 @@
         </div>
     </nav>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <div class="content-wrapper">
+        <!-- Left Side Ad -->
+        <aside class="side-ad left-ad">
+            <!-- sideadd -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5037582635615029"
+                 data-ad-slot="7926180064"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </aside>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- Right Side Ad -->
+        <aside class="side-ad right-ad">
+            <!-- sideadd -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5037582635615029"
+                 data-ad-slot="7926180064"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </aside>
+    </div>
 
     <!-- Footer with Bottom Ad -->
     <footer>
         <div class="ad-container ad-bottom">
-            <div class="ad-placeholder">
-                <p>Google AdSense Footer Ad (728x90)</p>
-                <!-- AdSense Footer Banner -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-5037582635615029"
-                     data-ad-slot="XXXXXXXXXX"></ins>
-            </div>
+            <!-- bottomAdd -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5037582635615029"
+                 data-ad-slot="4897564187"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
         </div>
         
         <div class="footer-content">
@@ -68,6 +90,9 @@
 
     <!-- AdSense Script Initialization -->
     <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>

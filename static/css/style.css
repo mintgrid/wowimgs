@@ -77,6 +77,48 @@ body {
     margin: 20px 0;
 }
 
+/* Content Wrapper with Side Ads */
+.content-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.side-ad {
+    width: 160px;
+    min-height: 600px;
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 10px;
+    position: sticky;
+    top: 90px;
+}
+
+.left-ad {
+    order: 1;
+}
+
+.right-ad {
+    order: 3;
+}
+
+main {
+    flex: 1;
+    order: 2;
+    min-height: 600px;
+}
+
+@media (max-width: 1200px) {
+    .side-ad {
+        display: none;
+    }
+    .content-wrapper {
+        justify-content: center;
+    }
+}
+
 .ad-top {
     background: #f0f4f8;
     padding: 10px;
