@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - WowImgs{% endblock %}
+
+{% block content %}
+<div class="converter-page">
+    <div class="container">
+        <!-- Sidebar Ad -->
+        <div class="sidebar-ad">
+            <div class="ad-placeholder ad-sidebar">
+                <p>Sidebar Ad<br>(300x600)</p>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:600px"
+                     data-ad-client="ca-pub-5037582635615029"
+                     data-ad-slot="XXXXXXXXXX"></ins>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="converter-header">
+                <h1 class="gradient-text">{{ title }}</h1>
+                <p>Convert your {{ from_format }} files to {{ to_format }} format quickly and easily</p>
+            </div>
+
+            <!-- Top Converter Ad -->
+            <div class="ad-container ad-converter-top">
+                <div class="ad-placeholder">
+                    <p>Converter Top Ad (728x90)</p>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:90px"
+                         data-ad-client="ca-pub-5037582635615029"
+                         data-ad-slot="XXXXXXXXXX"></ins>
+                </div>
+            </div>
+
+            <div class="converter-tool">
+                <div class="upload-area">
+                    <div class="upload-box" onclick="document.getElementById('file-input').click();">
+                        <div class="upload-icon">📁</div>
+                        <h3>Choose {{ from_format }} files</h3>
+                        <p>or drag and drop files here</p>
+                        <input type="file" id="file-input" multiple accept="image/*,application/pdf" style="display: none;">
+                        <button class="btn btn-primary btn-upload">Select Files</button>
+                    </div>
+                </div>
+
+                <!-- Inline Ad in converter -->
+                <div class="ad-container ad-converter-inline">
+                    <div class="ad-placeholder">
+                        <p>Converter Inline Ad (300x250)</p>
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-5037582635615029"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                    </div>
+                </div>
+
+                <div class="conversion-options">
+                    <h3>Conversion Options</h3>
+                    <div class="options-grid">
+                        <div class="option">
+                            <label>
+                                <input type="checkbox" checked> High Quality
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label>
+                                <input type="checkbox"> Preserve Metadata
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label>
+                                Output Format: 
+                                <select>
+                                    <option>{{ to_format }}</option>
+                                    {% if to_format == 'PNG' %}
+                                    <option>JPEG</option>
+                                    <option>WebP</option>
+                                    {% elif to_format == 'Image' %}
+                                    <option>PNG</option>
+                                    <option>JPEG</option>
+                                    <option>WebP</option>
+                                    {% endif %}
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="convert-section">
+                    <button class="btn btn-success btn-convert" disabled>
+                        🔄 Convert to {{ to_format }}
+                    </button>
+                </div>
+
+                <div class="results-area" style="display: none;">
+                    <h3>Converted Files</h3>
+                    <div class="results-list">
+                        <!-- Converted files will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Converter Ad -->
+            <div class="ad-container ad-converter-bottom">
+                <div class="ad-placeholder">
+                    <p>Converter Bottom Ad (728x90)</p>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:90px"
+                         data-ad-client="ca-pub-5037582635615029"
+                         data-ad-slot="XXXXXXXXXX"></ins>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3>How to use this {{ from_format }} to {{ to_format }} converter:</h3>
+                <ol>
+                    <li>Click "Select Files" or drag and drop your {{ from_format }} files</li>
+                    <li>Choose your conversion options</li>
+                    <li>Click "Convert to {{ to_format }}" button</li>
+                    <li>Download your converted files</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // File input handling (dummy functionality)
+    document.getElementById('file-input').addEventListener('change', function(e) {
+        const convertBtn = document.querySelector('.btn-convert');
+        if (e.target.files.length > 0) {
+            convertBtn.disabled = false;
+            convertBtn.textContent = `Convert ${e.target.files.length} file(s) to {{ to_format }}`;
+        }
+    });
+
+    // Convert button (dummy functionality)
+    document.querySelector('.btn-convert').addEventListener('click', function() {
+        alert('Conversion functionality coming soon!');
+    });
+
+    // Initialize AdSense ads
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{% endblock %}

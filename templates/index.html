@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Free Image Conversion Tools</span>
+            </h1>
+            <p class="hero-subtitle">Convert images between formats instantly. No registration required!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Sidebar Ad -->
+    <div class="sidebar-ad">
+        <div class="ad-placeholder ad-sidebar">
+            <p>Sidebar Ad<br>(300x600)</p>
+            <!-- AdSense Sidebar -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-5037582635615029"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>JPEG to PNG</h3>
+                <p>Convert JPEG images to PNG format with transparency support</p>
+                <a href="{{ url_for('jpeg_to_png') }}" class="btn btn-primary">Convert Now</a>
+            </div>
+
+            <!-- Inline Ad between features -->
+            <div class="feature-card ad-card">
+                <div class="ad-placeholder ad-inline">
+                    <p>Inline Ad (300x250)</p>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-5037582635615029"
+                         data-ad-slot="XXXXXXXXXX"></ins>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>PDF to Image</h3>
+                <p>Extract images from PDF files or convert PDF pages to images</p>
+                <a href="{{ url_for('pdf_to_img') }}" class="btn btn-primary">Convert Now</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🖼️</div>
+                <h3>Image to PDF</h3>
+                <p>Combine multiple images into a single PDF document</p>
+                <a href="{{ url_for('img_to_pdf') }}" class="btn btn-primary">Convert Now</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>PNG to JPEG</h3>
+                <p>Convert PNG images to JPEG format for smaller file sizes</p>
+                <a href="#" class="btn btn-primary">Convert Now</a>
+            </div>
+
+            <!-- Another inline ad -->
+            <div class="feature-card ad-card">
+                <div class="ad-placeholder ad-inline">
+                    <p>Inline Ad (300x250)</p>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-5037582635615029"
+                         data-ad-slot="XXXXXXXXXX"></ins>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>WebP Converter</h3>
+                <p>Convert images to WebP for better web performance</p>
+                <a href="#" class="btn btn-primary">Convert Now</a>
+            </div>
+        </div>
+
+        <!-- Middle Banner Ad -->
+        <div class="ad-container ad-middle">
+            <div class="ad-placeholder">
+                <p>Middle Banner Ad (728x90)</p>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-5037582635615029"
+                     data-ad-slot="XXXXXXXXXX"></ins>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h2 class="section-title">Why Choose WowImgs?</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h4>🔒 Secure & Private</h4>
+                    <p>Your files are processed securely and deleted after conversion</p>
+                </div>
+                <div class="benefit">
+                    <h4>⚡ Fast Processing</h4>
+                    <p>Lightning-fast conversions with optimized algorithms</p>
+                </div>
+                <div class="benefit">
+                    <h4>📱 Mobile Friendly</h4>
+                    <p>Works perfectly on desktop, tablet, and mobile devices</p>
+                </div>
+                <div class="benefit">
+                    <h4>💯 Free Forever</h4>
+                    <p>No registration, no limits, completely free to use</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Initialize additional AdSense ads
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{% endblock %}

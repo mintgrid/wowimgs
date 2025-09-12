@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WowImgs - Free Image Conversion Tools{% endblock %}</title>
+    <meta name="description" content="Free online image conversion tools. Convert JPEG to PNG, PDF to images, images to PDF and more!">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
+    <!-- Google AdSense Code (Replace with your publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5037582635615029"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Top Banner Ad -->
+    <div class="ad-container ad-top">
+        <div class="ad-placeholder">
+            <p>Google AdSense Banner Ad (728x90)</p>
+            <!-- AdSense Banner Code -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-5037582635615029"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><span class="gradient-text">WowImgs</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('jpeg_to_png') }}">JPEG to PNG</a></li>
+                <li><a href="{{ url_for('pdf_to_img') }}">PDF to Image</a></li>
+                <li><a href="{{ url_for('img_to_pdf') }}">Image to PDF</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer with Bottom Ad -->
+    <footer>
+        <div class="ad-container ad-bottom">
+            <div class="ad-placeholder">
+                <p>Google AdSense Footer Ad (728x90)</p>
+                <!-- AdSense Footer Banner -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-5037582635615029"
+                     data-ad-slot="XXXXXXXXXX"></ins>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <p>&copy; 2025 WowImgs. Free Image Conversion Tools.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AdSense Script Initialization -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>

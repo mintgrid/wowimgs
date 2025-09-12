@@ -1,0 +1,34 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/jpeg-to-png')
+def jpeg_to_png():
+    return render_template('converter.html', 
+                         title='JPEG to PNG Converter',
+                         from_format='JPEG',
+                         to_format='PNG')
+
+@app.route('/pdf-to-img')
+def pdf_to_img():
+    return render_template('converter.html',
+                         title='PDF to Image Converter',
+                         from_format='PDF',
+                         to_format='Image')
+
+@app.route('/img-to-pdf')
+def img_to_pdf():
+    return render_template('converter.html',
+                         title='Image to PDF Converter',
+                         from_format='Image',
+                         to_format='PDF')
+
+if __name__ == '__main__':
+    print("Starting Flask server...")
+    print("Server will be available at: http://127.0.0.1:8080")
+    print("Press CTRL+C to stop the server")
+    app.run(host='127.0.0.1', port=8080, debug=False)
