@@ -8,7 +8,17 @@
     <meta name="google-adsense-account" content="ca-pub-5037582635615029">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     
-    <!-- Google AdSense Code (Replace with your publisher ID) -->
+    <!-- Cookie Consent Notice -->
+    <script>
+        // Simple cookie consent implementation
+        if (!localStorage.getItem('cookieConsent')) {
+            document.addEventListener('DOMContentLoaded', function() {
+                showCookieConsent();
+            });
+        }
+    </script>
+    
+    <!-- Google AdSense Code -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5037582635615029"
             crossorigin="anonymous"></script>
 </head>
@@ -21,7 +31,8 @@
              data-ad-client="ca-pub-5037582635615029"
              data-ad-slot="1500372510"
              data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+             data-full-width-responsive="true"
+             data-adtest="off"></ins>
     </div>
 
     <nav class="navbar">
@@ -47,7 +58,8 @@
                  data-ad-client="ca-pub-5037582635615029"
                  data-ad-slot="7926180064"
                  data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-full-width-responsive="true"
+                 data-adtest="off"></ins>
         </aside>
 
         <main>
@@ -62,7 +74,8 @@
                  data-ad-client="ca-pub-5037582635615029"
                  data-ad-slot="7926180064"
                  data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-full-width-responsive="true"
+                 data-adtest="off"></ins>
         </aside>
     </div>
 
@@ -75,26 +88,70 @@
                  data-ad-client="ca-pub-5037582635615029"
                  data-ad-slot="4897564187"
                  data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+                 data-full-width-responsive="true"
+                 data-adtest="off"></ins>
         </div>
         
         <div class="footer-content">
             <p>&copy; 2025 WowImgs. Free Image Conversion Tools.</p>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
+                <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                <a href="{{ url_for('terms') }}">Terms of Service</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
             </div>
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies and similar technologies to improve your experience, analyze website traffic, and for advertising. This includes third-party services like Google AdSense. By continuing to use our site, you consent to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn-accept">Accept All</button>
+                <button onclick="declineCookies()" class="btn-decline">Decline</button>
+                <a href="{{ url_for('privacy_policy') }}" class="privacy-link">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
     <!-- AdSense Script Initialization -->
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        function showCookieConsent() {
+            document.getElementById('cookieConsent').style.display = 'block';
+        }
+        
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').style.display = 'none';
+            // Initialize ads after consent
+            initializeAds();
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+        
+        function initializeAds() {
+            // Only initialize ads if consent given
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch (e) {
+                    console.log('AdSense initialization failed:', e);
+                }
+            }
+        }
+        
+        // Initialize ads if consent already given
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                initializeAds();
+            }
+        });
     </script>
 </body>
 </html>

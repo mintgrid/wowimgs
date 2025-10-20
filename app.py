@@ -31,6 +31,18 @@ def img_to_pdf():
                          from_format='Image',
                          to_format='PDF')
 
+@app.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy-policy.html')
+
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 8080))
